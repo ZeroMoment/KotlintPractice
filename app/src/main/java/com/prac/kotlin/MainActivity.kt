@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import com.prac.kotlin.sample.Food
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +19,11 @@ class MainActivity : AppCompatActivity() {
         tempView.text = "哈哈 hello world"
 
         printId(tempView)
+
+        var food : Food = Food()
+        println(food.name)
+
+        food.run()
     }
 
     fun printId (printV : View?) {
