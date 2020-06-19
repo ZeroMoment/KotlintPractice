@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.TextView
 import com.prac.kotlin.sample.Food
+import com.prac.kotlin.sample.SampleInstance
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +25,17 @@ class MainActivity : AppCompatActivity() {
         println(food.name)
 
         food.run()
+
+        initData()
+
+    }
+
+    fun initData() {
+        var samItem: SampleInstance = SampleInstance.newInstace()
+        samItem.calculateWithArray()
+        samItem.calculateWithIntArray()
+        samItem.calculateWithList()
+        samItem.calculateWithListAPI()
     }
 
     fun printId (printV : View?) {
