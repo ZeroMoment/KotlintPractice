@@ -7,18 +7,20 @@
         既有 class 关键字的功能，又实现了单例
         
 ### 4.匿名内部类
-```val listener = object: ViewPager.SimpleOnPageChangeListener() {
+```
+   val listener = object: ViewPager.SimpleOnPageChangeListener() {
        override fun onPageSelected(position: Int) {
            // override
        }
    }    
-   ```
+```
    
    和 Java 创建匿名类的方式很相似，只不过把 new 换成了 object: 
    
 ### 5.伴生对象companion修饰（一个类中最多只可以有一个伴生对象，但可以有多个嵌套对象。）
 伴生对象：
-```class A {
+```
+   class A {
        companion object B {
            var c: Int = 0
        }
@@ -27,18 +29,20 @@
     调用：A.c
     
 嵌套对象：
-```class A {
+```
+   class A {
        object B {
            var c: Int = 0
        }
    }
-   ```
+```
    调用：A.B.c
 
 ### 6.常量（const关键字修饰，Kotlin 中只有基本类型和 String 类型可以声明成常量）
 
 ### 7.集合
-```Kotlin 中集合分为两种类型：只读的和可变的。这里的只读有两层意思：
+```
+   Kotlin 中集合分为两种类型：只读的和可变的。这里的只读有两层意思：
    
    集合的 size 不可变
    集合中的元素值不可变
@@ -65,7 +69,7 @@
    然后就可以对集合进行修改了，这里有一点需要注意下：
    
    toMutable*() 返回的是一个新建的集合，原有的集合还是不可变的，所以只能对函数返回的集合修改。
-   ```
+```
 
 
 
