@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.TextView
 import com.prac.kotlin.sample.Food
+import com.prac.kotlin.sample.PracticeThree
 import com.prac.kotlin.sample.SampleInstance
 
 class MainActivity : AppCompatActivity() {
@@ -28,9 +29,15 @@ class MainActivity : AppCompatActivity() {
 
         initData()
 
+        testSquence()
+
+        //practice3
+        var prcatce3 = PracticeThree(name = "lizhiming", age = 30, grade = "牛人")
+        prcatce3.show()
+        prcatce3.pringList()
     }
 
-    fun initData() {
+    fun initData() { //pricatci 2
         var samItem: SampleInstance = SampleInstance.newInstace()
         samItem.calculateWithArray()
         samItem.calculateWithIntArray()
@@ -38,7 +45,21 @@ class MainActivity : AppCompatActivity() {
         samItem.calculateWithListAPI()
     }
 
-    fun printId (printV : View?) {
+    fun printId (printV : View?) { //practice 1
         Log.e("lzm", "lzm-printid:"+printV?.id)
+    }
+
+    fun testSquence() {
+        val sequence = sequenceOf(1, 2, 3, 4)
+        val result: Sequence<Int> = sequence
+            .map { i ->
+                println("Map $i")
+                i * 2
+            }
+            .filter { i ->
+                println("Filter $i")
+                i % 3  == 0
+            }
+        println(result.first())
     }
 }
