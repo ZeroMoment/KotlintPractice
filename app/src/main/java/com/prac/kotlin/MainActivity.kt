@@ -1,15 +1,31 @@
 package com.prac.kotlin
 
+import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.TypedValue
 import android.view.View
 import android.widget.TextView
 import com.prac.kotlin.sample.Food
 import com.prac.kotlin.sample.PracticeThree
 import com.prac.kotlin.sample.SampleInstance
+import kotlin.math.pow
+
+fun String.method(value: Int) {
+    println(this+value)
+}
+
+val Float.dp
+    get() = TypedValue.applyDimension(
+        TypedValue.COMPLEX_UNIT_DIP,
+        this,
+        Resources.getSystem().displayMetrics
+    )
 
 class MainActivity : AppCompatActivity() {
+
+    val RADIUS = 200f.dp
 
     lateinit var tempView : TextView
 
@@ -35,6 +51,16 @@ class MainActivity : AppCompatActivity() {
         var prcatce3 = PracticeThree(name = "lizhiming", age = 30, grade = "牛人")
         prcatce3.show()
         prcatce3.pringList()
+
+        "lizhiming".method(1314)
+
+//        Math.pow(2.0, 10.0) //2的10次方
+//
+//        2f.pow(10) //2的10次方
+
+
+
+
     }
 
     fun initData() { //pricatci 2
