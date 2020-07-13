@@ -10,6 +10,11 @@ import android.widget.TextView
 import com.prac.kotlin.sample.Food
 import com.prac.kotlin.sample.PracticeThree
 import com.prac.kotlin.sample.SampleInstance
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlin.coroutines.CoroutineContext
 import kotlin.math.pow
 
 fun String.method(value: Int) {
