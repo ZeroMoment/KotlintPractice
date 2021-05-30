@@ -1,12 +1,15 @@
 package com.prac.kotlin
 
+import android.content.Intent
 import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.TypedValue
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
+import com.prac.kotlin.page.SimpleWebviewActivity
 import com.prac.kotlin.sample.Food
 import com.prac.kotlin.sample.PracticeThree
 import com.prac.kotlin.sample.SampleInstance
@@ -64,6 +67,11 @@ class MainActivity : AppCompatActivity() {
 //        2f.pow(10) //2的10次方
 
 
+        findViewById<Button>(R.id.to_webview).setOnClickListener {
+            val intent = Intent(this@MainActivity, SimpleWebviewActivity::class.java)
+            intent.putExtra("process_key", "https://www.baidu.com/")
+            startActivity(intent)
+        }
 
 
     }
